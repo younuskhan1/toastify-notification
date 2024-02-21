@@ -32,6 +32,7 @@ body{
     overflow: hidden;
     padding: 20px;
 }
+
 .toast{
     width: 400px;
     height: 80px;
@@ -42,6 +43,14 @@ body{
     display: flex;
     align-items: center;
     position: relative;
+    transform: translate(100%);
+    animation: moveleft 0.5s linear forwards;
+}
+
+@keyframes moveleft {
+    100%{
+        transform: translate(0);
+    }
 }
 .toast i{
     margin: 0px 20px;
@@ -54,6 +63,10 @@ body{
 .toast.invalid i{
     color: orange;
 }
+
+/* the below .toast::after class inserts the bottom colorful underline
+into the toast div after clicking the button */
+
 .toast::after{
     content: "";
     position: absolute;
@@ -64,8 +77,18 @@ body{
     background: green;
     animation: anim 5s linear forwards;
 }
+
 @keyframes anim {
     100%{
         width: 0;
     }
 }
+
+.toast.error::after{
+    background: red;
+}
+.toast.invalid::after{
+    background: orange;
+}
+
+
