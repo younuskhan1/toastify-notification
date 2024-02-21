@@ -47,6 +47,10 @@ body{
     animation: moveleft 0.5s linear forwards;
 }
 
+/* the below moveleft tells the element's animation's time mode and direction
+and 100%{ transform: translate(0);} tells the what css element will be animated.
+Above translate(100%) will be resulted in 0% at last */
+
 @keyframes moveleft {
     100%{
         transform: translate(0);
@@ -64,7 +68,9 @@ body{
     color: orange;
 }
 
-/* the below .toast::after class inserts the bottom colorful underline
+/* ::after is used to insert outer something/element/content into 
+the existed element after clicking on the button or html element.
+the below .toast::after class inserts the bottom colorful underline
 into the toast div after clicking the button */
 
 .toast::after{
@@ -77,6 +83,10 @@ into the toast div after clicking the button */
     background: green;
     animation: anim 5s linear forwards;
 }
+
+/* the below anim tells the element's animation's time mode and direction
+and 100%{ width: (0);} tells the what css element will be animated.
+Above width: 100% will be resulted in 0% at last */
 
 @keyframes anim {
     100%{
